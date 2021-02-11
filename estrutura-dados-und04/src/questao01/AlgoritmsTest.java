@@ -8,6 +8,7 @@ import java.util.Random;
 
 public class AlgoritmsTest{
     public static void main(String[] args) {
+
         int range = 9;
         Random random = new Random();
         Integer[] array = new Integer[10];
@@ -27,15 +28,15 @@ public class AlgoritmsTest{
         TimSort timSort = new TimSort(array, array.length);
         MergeSort mergeSort = new MergeSort(array, array.length);
 
-        /*Recebe array ordenado*/
+        /*CountingSort */
         array = coutingSort.getArraySort();
-
         System.out.println("");
         System.out.println("Ordenação Couting Sort:");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
 
+        /*TimSort*/
         array = timSort.getArraySort();
         System.out.println("");
         System.out.println("Ordenação Tim Sort:");
@@ -43,6 +44,7 @@ public class AlgoritmsTest{
             System.out.print(array[i] + " ");
         }
 
+        /*MergeSort*/
         array = mergeSort.getArraySort();
         System.out.println("");
         System.out.println("Ordenação Merge Sort:");
