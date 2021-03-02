@@ -1,4 +1,4 @@
-package implement.Lista;
+package lista;
 
 import java.util.Objects;
 
@@ -29,13 +29,13 @@ public class ListaDuplamenteEncadeada <Generic> {
     public void list() {
 
         if(isEmpty()){
-            System.out.println("Lista está vazia");
+            System.out.print("Espaço Vazio ");
         }
 
         Node nodeAux = startList;
 
         while(nodeAux != null){
-            System.out.println(nodeAux.getData());
+            System.out.print(nodeAux.getData() + " ");
             nodeAux = nodeAux.getNextNode();
         }
 
