@@ -62,5 +62,37 @@ public class Grafo <Generic>{
 
             fila.remove(0);
         }
+
+        for(int i = 0; i < this.vertices.size(); i ++){
+            if(!marcados.contains(vertices.get(i))){
+                System.out.println(vertices.get(i).getDado());
+            }
+        }
+    }
+
+    public void buscaProfundidade(){
+        ArrayList<Vertice<Generic>> marcados = new ArrayList<>();
+        ArrayList<Vertice<Generic>> fila = new ArrayList<>();
+        Vertice<Generic> atual = this.vertices.get(0);
+        int contador = 0;
+
+        marcados.add(atual);
+        System.out.println(atual.getDado());
+        fila.add(atual);
+
+        while(fila.size() < this.vertices.size()){
+            Vertice<Generic> visitado = fila.get(contador);
+
+            for(int i = 0; i < visitado.getArestasSaida().size(); i ++){
+                Vertice<Generic> proximo = visitado.getArestasSaida().get(i).getFim();
+
+                if(!marcados.contains(proximo)){
+                    marcados.add(proximo);
+                    System.out.println(proximo.getDado());
+                    fila.add(proximo);
+                }
+                contador += 1;
+            }
+        }
     }
 }
